@@ -5,7 +5,7 @@ import BlackNoiseBackground from '../addOns/BlackNoiseBackground'
 function Philosphy() {
     return (
         <>
-            <div className='w-full mt-10 h-screen bg-[#ffffff] relative' >
+            <div className='w-full mt-10 h-screen  relative' >
                 {/* <BlackNoiseBackground opacity={.5} fullScreen={false} /> */}
                 <h1 className=' font-bold -rotate-90 text-[#222222] text-xs absolute font-["Futura_std"]  bottom-30 -left-12 ' >26°27′00″N 80°19′55″E </h1>
 
@@ -37,7 +37,7 @@ function Philosphy() {
                 </div>
             </div>
 
-               <div className='w-full h-screen bg-[#ffffff]' >
+               <div className='w-full h-screen ' >
             
                     <div className='w-full px-10 pt-20 gap-5 flex-col text-[#222222] font-["Futura_std"] flex h-full'>
             

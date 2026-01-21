@@ -15,6 +15,8 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import Hero from './pages/Hero'
 import BranchBack from './pages/BranchBack'
 import LiquidCursor from './addOns/LiquidCursor'
+import Ink from './pages/Ink'
+import StudioWorks from './pages/StudioWorks'
 
 function App() {
 
@@ -31,33 +33,23 @@ function App() {
     >
 
 
-      {/* <Canvas onCreated={(state) => {}} style={{height: '100vh', width: '100vw' }} className=''> */}
+      <div className='select-none fixed -z-10' >
+        <Canvas 
+          orthographic camera={{ zoom: 1, position: [0, 0, 100], left: -window.innerWidth / 2, right: window.innerWidth / 2, top: window.innerHeight / 2, bottom: -window.innerHeight / 2 }} 
+           style={{ height: '100vh', width: '100vw' }} className='pointer-events-none bg-transparent'> 
 
+          <Ink />
+        </Canvas>
 
-      {/* <LiquidCursor /> */}
-
-      {/* <Environment preset="city" /> */}
-
-
-      {/* <BranchBack /> */}
-      {/* <ContactShadows opacity={0.4} scale={10} blur={2} far={4.5} /> */}
-      {/* <ambientLight color={'brown'} intensity={2} /> */}
-      {/* <OrbitControls enableDamping /> */}
-
-      {/* <EffectComposer> */}
-      {/* <Bloom intensity={1}  /> */}
-      {/* </EffectComposer> */}
-      {/* <Hero /> */}
-
-      {/* </Canvas> */}
-
+      </div>
 
 
       <Menu />
       <Landing />
-      <Skadoosh />
+      {/* <Skadoosh /> */}
       <Philosphy />
-      <Work />
+      <StudioWorks />
+      {/* /<Work /> */}
       <HowWeWork />
       {/* <About /> */}
       {/* <JoinUs /> */}
