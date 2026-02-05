@@ -114,7 +114,7 @@ function StudioWorks() {
   }, [activeIndex, ready]);
 
   return (
-    <div className='w-full relative font-["Futura_std"]  h-screen '>
+    <div className='w-full relative  fut-medium h-screen '>
       <div className="relative w-full pt-10 overflow-hidden">
         <div
           ref={sliderRef}

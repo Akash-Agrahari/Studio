@@ -1,5 +1,6 @@
+import React, { useState, useEffect } from "react";
 import Landing from "./pages/Landing";
-import { ReactLenis } from "lenis/react"; // Notice the new import path
+import { ReactLenis } from "lenis/react";
 import Philosphy from "./pages/Philosphy";
 import Fotter from "./pages/Fotter";
 import { Canvas } from "@react-three/fiber";
@@ -10,10 +11,25 @@ import Ambient from "./addOns/Ambient";
 import BlackNoiseBackground from "./addOns/BlackNoiseBackground";
 import VideoTexture from "./addOns/VideoTexture";
 import { Suspense } from "react";
+import Loader from "./addOns/Loader";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  // FIX: Use useEffect to lock body scroll instead of a div class
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+      window.scrollTo(0, 0); // Ensure user is at top
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isLoading]);
+
   return (
     <>
+      {isLoading && <Loader onComplete={() => setIsLoading(false)} />}
+
       <ReactLenis
         root
         options={{
@@ -28,35 +44,40 @@ function App() {
           smoothWheel: true,
         }}
       >
-        <div className="w-full h-screen fixed z-10">
-          <Canvas
-            orthographic
-            camera={{
-              zoom: 1,
-              position: [0, 0, 100],
-              left: -window.innerWidth / 2,
-              right: window.innerWidth / 2,
-              top: window.innerHeight / 2,
-              bottom: -window.innerHeight / 2,
-            }}
-            className="z-10"
-            style={{ width: "100vw", height: "100vh" }}
-          >
-            <Ink />
-            <Suspense fallback={null}>
-            <VideoTexture />
-          </Suspense>
-          </Canvas>
-        </div>
+        {/* Remove the conditional h-screen class logic from here */}
+        <div className="w-full relative">
+          
+          <div className="w-full h-screen fixed z-10 pointer-events-none">
+            <Canvas
+              orthographic
+              camera={{
+                zoom: 1,
+                position: [0, 0, 100],
+                left: -window.innerWidth / 2,
+                right: window.innerWidth / 2,
+                top: window.innerHeight / 2,
+                bottom: -window.innerHeight / 2,
+              }}
+              className="z-10"
+              style={{ width: "100vw", height: "100vh" }}
+            >
+              <Ink />
+              <Suspense fallback={null}>
+                <VideoTexture />
+              </Suspense>
+            </Canvas>
+          </div>
 
-        <BlackNoiseBackground opacity={0.3} fullScreen={true} />
-        <Ambient />
-        <Landing />
-        <Philosphy />
-        <Details />
-        <StudioWorks />
-        <Fotter />
-        {/* <JoinUs /> */}
+          <BlackNoiseBackground opacity={0.3} fullScreen={true} />
+          
+          <Ambient muteAll={isLoading} />
+          
+          <Landing />
+          <Philosphy />
+          <Details />
+          <StudioWorks />
+          <Fotter />
+        </div>
       </ReactLenis>
     </>
   );

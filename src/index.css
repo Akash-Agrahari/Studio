@@ -48,3 +48,48 @@ html,body{
 
 
 
+@font-face {
+  font-family: "Futura_Bold";
+  src: url("/font/FuturaStd-Bold.otf");
+}
+
+@font-face {
+  font-family: "Futura_Light";
+  src: url("/font/FuturaStd-Light.otf");
+}
+
+@font-face {
+  font-family: "Futura_Medium";
+  src: url("/font/FuturaStd-Medium.otf");
+}
+
+@font-face {
+  font-family: "Futura_ExtraBold";
+  src: url("/font/FuturaStd-ExtraBold.otf");
+}
+
+@font-face {
+  font-family: "Futura_SemiBold";
+  src: url("/font/FuturaStd-Heavy.otf");
+}
+
+
+.fut-bold{
+  font-family: "Futura_Bold" ;
+}
+
+.fut-extrabold{
+  font-family: "Futura_ExtraBold" ;
+}
+
+.fut-semibold{
+  font-family: "Futura_SemiBold" ;
+}
+
+.fut-medium{
+  font-family: "Futura_Medium" ;
+}
+
+.fut-light{
+  font-family: "Futura_Light" ;
+}

@@ -13,6 +13,12 @@ function Ink() {
 
   // FIX 2: Correct Event Listener
   useEffect(() => {
+
+    if(window.innerWidth < 1024)
+      {
+        return;
+      }
+
     const handleMousemove = (event) => {
       mouse.current.x = event.clientX - window.innerWidth / 2
       mouse.current.y = -(event.clientY - window.innerHeight / 2)
