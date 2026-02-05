@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-xs: 400px; 
+}
+
 *{
     box-sizing: border-box;
 }
@@ -13,4 +17,34 @@ html,body{
 ::-webkit-scrollbar{
     display: none;
 }
+
+
+/* Music Bar Animation */
+@keyframes soundWave {
+  0%, 100% { height: 3px; }
+  50% { height: 12px; }
+}
+
+
+.music-bar {
+  width: 2px;
+  background-color: white; /* Bar color */
+  border-radius: 99px;
+  animation: soundWave 1s ease-in-out infinite;
+}
+
+/* Pause state: Bars stop moving and shrink */
+.bar-paused {
+  animation-play-state: paused;
+  height: 4px !important;
+  transition: height 0.3s ease;
+}
+
+/* Animation Delays for Wave Effect */
+.music-bar:nth-child(1) { animation-duration: 0.8s; }
+.music-bar:nth-child(2) { animation-duration: 1.1s; }
+.music-bar:nth-child(3) { animation-duration: 1.3s; }
+.music-bar:nth-child(4) { animation-duration: 1.0s; }
+
+
 
