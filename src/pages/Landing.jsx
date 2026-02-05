@@ -6,21 +6,13 @@ function Landing() {
   const divREf = useRef();
 
   return (
-    <div
-      ref={divREf}
-      className="w-full  min-h-screen text-[#212721]"
-    >
-      <div className="max-w-[1920px] mx-auto  lg:gap-y-[2vh] h-auto overflow-hidden  grid grid-cols-12 md:px-5 xl:px-10 lg:px-2.5 lg:py-10 xl:py-5 px-2.5 2xl:h-auto lg:h-screen min-h-screen">
-      
+    <div ref={divREf} className="w-full  min-h-screen text-[#212721]">
+      <div className="max-w-[2100px] mx-auto  lg:gap-y-[2vh] h-auto overflow-hidden  grid grid-cols-12 md:px-5 xl:px-10 lg:px-2.5 lg:py-10 xl:py-5 px-2.5 2xl:h-auto lg:h-screen min-h-screen">
         <div className="flex relative lg:p-0 lg:m-0 flex-col lg:gap-5 lg:items-center lg:flex lg:flex-row md:grid md:grid-cols-12  md:items-center row-start-1 col-span-12 items-start">
-          
           <h1 className=" lg:text-[8rem] 2xl:text-[10vw] xl:text-[9vw] pointer-events-none md:col-start-1 leading-none md:row-start-1 md:col-span-3 select-none font-bold fut-bold text-[clamp(5rem,25vw,10rem)]">
             A
           </h1>
 
-          <p className="absolute -right-10 -rotate-90 text-sm font-bold fut-bold ">
-            ESTD.2026
-          </p>
 
           <video
             loop
@@ -32,9 +24,15 @@ function Landing() {
             className="  justify-self-center video-1 transform-gpu will-change-transform object-top 2xl:w-[25%]  lg:aspect-16/9 xl:h-[18vh] xl:w-[30%] lg:w-[20vw] md:col-start-4 md:col-span-6 md:row-start-1 object-cover xs:aspect-16/7 aspect-16/5 lg:rounded-none   rounded-2xl w-full pointer-events-none"
           />
 
+
           <h1 className=" lg:text-[8rem]  2xl:text-[10vw] xl:text-[9vw] pointer-events-none leading-none md:row-start-2 md:col-span-12 select-none font-bold fut-bold self-center text-center justify-self-center text-[clamp(4rem,20vw,10rem)] ">
             CREATIVE
           </h1>
+         
+          <p className=" justify-self-center absolute lg:right-0 right-[2vw] top-[1vh] origin-bottom-right self-center 2xl:text-[1.5rem] -rotate-90 text-[clamp(.5rem,2.5vw,1rem)] font-bold fut-bold ">
+            ESTD.2026
+          </p>
+        
         </div>
 
         <div className="row-start-2 lg:p-0 lg:m-0 lg:gap-[10vw] justify-between lg:justify-normal col-span-12 flex items-center ">
